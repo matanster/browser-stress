@@ -1,0 +1,42 @@
+<html>
+<script>
+var size = 1000*100
+window.onload = function() {
+  document.getElementById("quantifier").value = size
+}
+
+function scaffold()
+{
+  console.log("processing Scaffold...");
+  a = new Array
+}
+function start()
+{
+  size = document.getElementById("quantifier").value
+  console.log("Starting... quantifier is " + size);
+  console.log("starting test")
+  for (i=0; i<size; i++){
+    var val1 = Math.random().toString(36).substr(2, 5) // 10 characters long random string
+    var val2 = Math.random().toString(36).substr(2, 5) + 'aaa' 
+    a[i]={"some" : val1, "other" : val2}
+  }
+  console.log("done...")
+}
+
+function tearDown()
+{
+  console.log("processing teardown");
+  a.length=0
+}
+
+</script>
+<body>
+	<span style="color:green;">Quantifier:</span>
+	<input id="quantifier" style="color:green;" type="text"></input>
+	<button onclick="scaffold()">Scaffold</button>
+	<button onclick="start()">Start</button>
+	<button onclick="tearDown()">Clean</button>
+	<br/>
+</body>
+</html>
+
